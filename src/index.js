@@ -1,11 +1,3 @@
-import _ from 'lodash';
+import main from './modules/mainPage'
 
-function component() {
-    const element = document.createElement("div")
-
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-    return element;
-}
-
-document.body.appendChild(component())
+document.addEventListener('DOMContentLoaded', main)
