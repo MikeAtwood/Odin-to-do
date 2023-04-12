@@ -1,3 +1,3 @@
-import main from './modules/mainPage'
+import initializeWebsite from './modules/mainPage'
 
-document.addEventListener('DOMContentLoaded', main)
+initializeWebsite
