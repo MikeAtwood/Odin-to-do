@@ -1,0 +1,1 @@
+(()=>{"use strict";document.getElementById("content").appendChild(function(){const t=document.createElement("header");t.classList.add("main-div");const e=document.createElement("h1");return e.classList.add("title"),e.textContent="Odin's To-Do",t.appendChild(e),t}())})();
