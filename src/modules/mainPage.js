@@ -9,7 +9,7 @@ function createHeader() {
 
     const title = document.createElement("h1")
     title.classList.add("title")
-    title.textContent = "Odin's To-Do"
+    title.textContent = "Odin's ToDo List"
     const logo = document.createElement("img")
     logo.classList.add("logo")
     logo.src = "../src/img/icon.png"
@@ -44,7 +44,7 @@ function createFooter() {
 
     const footerText = document.createElement("h2")
     footerText.classList.add("footer-h2")
-    footerText.textContent = ""
+    footerText.textContent = "Copyright © 2023 mikeatwood"
 
     footer.appendChild(footerText)
 
