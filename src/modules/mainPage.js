@@ -1,4 +1,4 @@
-import { createNoteForm, saveNote } from "./notes"
+import { createNoteForm, saveNote, displayNotes } from "./notes"
 
 function createHeader() {
     const header = document.createElement("header")
@@ -38,6 +38,7 @@ function createContainer() {
 
     const notesContainer = document.createElement("div")
     notesContainer.classList.add("notes-container")
+    notesContainer.id = "notes-container"
 
     createNoteBtn.addEventListener("click", () => {
         const noteForm = createNoteForm();
@@ -55,7 +56,7 @@ function createContainer() {
     navbar.appendChild(createNoteBtn)
     main.appendChild(navbar)
     main.appendChild(notesContainer)
-
+    
 
     return main;
 }

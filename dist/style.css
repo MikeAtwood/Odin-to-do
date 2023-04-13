@@ -52,14 +52,12 @@ body {
 .navbar {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background-color: rgb(223, 223, 223);
     width: 250px;
-    padding: 10px 20px;
-    top: 0;
-    left: 0;
-    right: 0;
+    padding: 10px;
+    
     color: black;
 }
 
@@ -79,9 +77,8 @@ body {
 
 .create-note-btn {
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 5px;
-    margin-bottom: 40px;
 }
 
 
@@ -110,9 +107,14 @@ body {
 /* Form */
 form {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     margin-top: 20px;
+    width: 400px;
+    max-width: 400px;
+}
+
+#form-container {
+    width: 100%;
 }
 
 label {
@@ -130,7 +132,11 @@ textarea {
     border-radius: 5px;
     width: 100%;
     font-size: 16px;
-    margin-top: 5px;
+}
+
+.form button {
+    padding: 10px;
+    border-radius: 5px;
 }
 
 button {
@@ -140,6 +146,21 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
 }
 
+/* New note */
+.note {
+    display: flex;
+    flex-direction: column;
+    width: 1400px;
+    max-width: 1400px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#notes-container {
+    height: calc(100vh - 100px);
+    overflow-y: auto
+}
