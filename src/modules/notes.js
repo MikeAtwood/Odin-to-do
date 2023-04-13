@@ -83,8 +83,12 @@ function createNoteElement(note) {
 
     const deleteButton = document.createElement("button")
     deleteButton.textContent = "Delete"
-    deleteButton.addEventListener("click", function() {
-        note.remove()
+
+    const notesContainer = document.getElementById("notes-container")
+    notesContainer.addEventListener("click", function(event) {
+        if (event.target === deleteButton) {
+            event.target.parentNode.remove()
+        }
     })
 
     noteElement.appendChild(titleElement)
