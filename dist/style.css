@@ -137,6 +137,7 @@ textarea {
 .form button {
     padding: 10px;
     border-radius: 5px;
+    background-color: #4caf50;
 }
 
 button {
@@ -158,9 +159,19 @@ button {
     border: 1px solid #ddd;
     padding: 10px;
     margin-bottom: 10px;
+    position: relative;
 }
 
 #notes-container {
     height: calc(100vh - 100px);
     overflow-y: auto
+}
+
+.delete-btn {
+    background-color: red;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
 }

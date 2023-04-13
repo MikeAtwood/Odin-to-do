@@ -82,6 +82,7 @@ function createNoteElement(note) {
     dateElement.textContent = new Date().toLocaleDateString()
 
     const deleteButton = document.createElement("button")
+    deleteButton.classList.add("delete-btn")
     deleteButton.textContent = "Delete"
 
     const notesContainer = document.getElementById("notes-container")
