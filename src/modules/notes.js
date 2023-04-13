@@ -34,7 +34,29 @@ export function createNoteForm() {
 
     return form
 }
+const notes = [];
 
 export function saveNote() {
-    // code here
+    const title = document.getElementById("note-title").value;
+    const content = document.getElementById("note-content").value;
+    const note = { title, content }
+    notes.push(note)
+    displayNotes()
+}
+
+function displayNotes() {
+    const notesContainer = document.getElementById("notes-container")
+    notesContainer.textContent = ''
+    notes.forEach(note => {
+        const noteElement = document.createElement('div')
+        noteElement.classList.add('note')
+        const titleElement = document.createElement('h3')
+        titleElement.textContent = note.title;
+        const contentElement = document.createElement('p')
+        contentElement.textContent = note.content;
+
+        noteElement.appendChild(titleElement)
+        noteElement.appendChild(contentElement)
+        notesContainer.appendChild(noteElement)
+    });
 }

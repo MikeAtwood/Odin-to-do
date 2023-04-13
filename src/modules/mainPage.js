@@ -13,10 +13,10 @@ function createHeader() {
     const logo = document.createElement("img")
     logo.classList.add("logo")
     logo.src = "../src/img/icon.png"
-    logo.alt = "logo" 
+    logo.alt = "logo"
 
     container.appendChild(logo)
-    container.appendChild(title) 
+    container.appendChild(title)
     header.appendChild(container)
     return header
 }
@@ -42,13 +42,20 @@ function createContainer() {
     createNoteBtn.addEventListener("click", () => {
         const noteForm = createNoteForm();
         notesContainer.appendChild(noteForm)
-    })
 
+
+        noteForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            saveNote();
+            displayNotes();
+            noteForm.reset()
+        })
+    })
     navbar.appendChild(head)
     main.appendChild(navbar)
     navbar.appendChild(createNoteBtn)
     main.appendChild(notesContainer)
-    
+
 
     return main;
 }
