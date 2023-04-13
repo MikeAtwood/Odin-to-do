@@ -28,9 +28,9 @@ function createContainer() {
     const navbar = document.createElement("div")
     navbar.classList.add("navbar")
 
-    const head = document.createElement("h2")
-    head.classList.add("head")
-    head.textContent = "Lists"
+    const lists = document.createElement("h2")
+    lists.classList.add("head")
+    lists.textContent = "Lists"
 
     const createNoteBtn = document.createElement('button')
     createNoteBtn.classList.add("create-note-btn")
@@ -51,9 +51,9 @@ function createContainer() {
             noteForm.reset()
         })
     })
-    navbar.appendChild(head)
-    main.appendChild(navbar)
+    navbar.appendChild(lists)
     navbar.appendChild(createNoteBtn)
+    main.appendChild(navbar)
     main.appendChild(notesContainer)
 
 
@@ -82,6 +82,7 @@ function initializeWebsite() {
     content.appendChild(createHeader())
     content.appendChild(createContainer())
     content.appendChild(createFooter())
+    console.log(createNoteForm())
 }
 
 export default initializeWebsite;

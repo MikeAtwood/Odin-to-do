@@ -5,13 +5,13 @@ export function createNoteForm() {
     titleLabel.textContent = "Title:"
     const titleInput = document.createElement("input")
     titleInput.type = "text"
-    titleInput.name = "title"
+    titleInput.classList.add("note-title")
     titleLabel.appendChild(titleInput)
 
     const descriptionLabel = document.createElement("label")
     descriptionLabel.textContent = "Description:"
     const descriptionInput = document.createElement("textarea")
-    descriptionInput.name = "description"
+    descriptionInput.classList.add("note-description")
     descriptionLabel.appendChild(descriptionInput)
     
     const dateLabel = document.createElement("label")
@@ -37,16 +37,22 @@ export function createNoteForm() {
 const notes = [];
 
 export function saveNote() {
-    const title = document.getElementById("note-title").value;
-    const content = document.getElementById("note-content").value;
-    const note = { title, content }
+    const titleInput = document.querySelector("#note-title")[0];
+    const descriptionInput = document.querySelector("#note-description")[0];
+    console.log(titleInput)
+    console.log(descriptionInput)
+    const title = titleInput.value
+    const description = descriptionInput.value
+    const note = { title, description }
     notes.push(note)
     displayNotes()
 }
 
 function displayNotes() {
     const notesContainer = document.getElementById("notes-container")
+    console.log(notesContainer)
     notesContainer.textContent = ''
+    console.log(notes)
     notes.forEach(note => {
         const noteElement = document.createElement('div')
         noteElement.classList.add('note')
