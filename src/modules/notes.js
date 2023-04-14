@@ -5,7 +5,7 @@ export function createNoteForm() {
     const titleGroup = document.createElement("div")
     titleGroup.classList.add("form-group")
 
-  
+
 
     const titleInput = document.createElement("input")
     titleInput.type = "text"
@@ -33,7 +33,7 @@ export function createNoteForm() {
 
     contentGroup.appendChild(descriptionLabel)
     contentGroup.appendChild(descriptionInput)
-    
+
     const dateLabel = document.createElement("label")
     const dateInput = document.createElement("input")
     dateInput.type = "date"
@@ -61,14 +61,14 @@ export function saveNote() {
     const date = new Date().toLocaleString()
     console.log(title)
     console.log(content)
-    
+
     const note = { title, content, date }
     notes.push(note)
     console.log("this is the notes array", notes)
     displayNotes()
 }
 
-function createNoteElement(note) {
+function createNoteElement(note, index) {
     const noteElement = document.createElement("div")
     noteElement.classList.add("note")
 
@@ -84,13 +84,12 @@ function createNoteElement(note) {
     const deleteButton = document.createElement("button")
     deleteButton.classList.add("delete-btn")
     deleteButton.textContent = "Delete"
-
-    const notesContainer = document.getElementById("notes-container")
-    notesContainer.addEventListener("click", function(event) {
-        if (event.target === deleteButton) {
-            event.target.parentNode.remove()
-        }
+    deleteButton.addEventListener("click", function() {
+        notes.splice(index, 1)
+        displayNotes()
     })
+
+
 
     noteElement.appendChild(titleElement)
     noteElement.appendChild(contentElement)
@@ -105,10 +104,11 @@ export function displayNotes() {
     notesContainer.id = "notes-container"
     console.log(notesContainer)
     notesContainer.textContent = '';
-    
+
     for (let i = 0; i < notes.length; i++) {
         const note = notes[i]
-        const noteElement = createNoteElement(note)
+        const noteElement = createNoteElement(note, i)
         notesContainer.appendChild(noteElement)
     }
 }
+
